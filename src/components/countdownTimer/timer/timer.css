@@ -1,0 +1,234 @@
+.timerContainer{
+    display: inline-block;
+    margin: 1rem 1% auto 1%;
+    box-sizing: content-box;
+    width: 8em;
+    height: 10.5rem;
+    text-align: center;
+    perspective: 20em;
+    text-align: center;
+    transform-style: preserve-3d;
+}
+.TimerContent{
+    text-align: center;
+    height: 10em;
+    width: 8em;
+}
+.secondAfter{
+    position: absolute;
+    width: 8rem;
+    height: 3.75rem;
+    background-color:hsl(236, 21%, 26%);
+    border-radius: .1em;
+    color: hsl(345, 95%, 68%);
+    font-family: 'Red Hat Text', sans-serif;
+    font-size: 3.5em;
+    font-weight: 700;
+    overflow: hidden;
+}
+.secondAfter > span{
+    height: 100%;
+    width: 100%;
+    position: relative;
+    bottom: -1.3rem;
+    padding: 0;
+}
+.secondAfter::before{
+    content: '';
+    width: 100%;
+    height: 1.08em;
+    position: absolute;
+    left: 0;
+    border-radius: 0 .1em .1em 0;
+    background-color: rgba(0,0,0,.2);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    z-index: 3;
+}
+.topPartTimer{
+    border-radius: .1em;
+    width: 8rem;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    -moz-animation-timing-function: linear;
+    animation-timing-function: linear;
+    animation-duration: 1s;
+    height: 7.5em;
+    box-sizing: content-box;
+    text-align: center;
+    transform-style: preserve-3d;
+}
+.topParttext{
+    width: 100%;
+    background-color:hsl(236, 21%, 26%);
+    border-radius: .1em;
+    color: hsl(345, 95%, 68%);
+    font-family: 'Red Hat Text', sans-serif;
+    font-size: 3.5em;
+    font-weight: 700;
+    height: 3.9rem;
+    width: 8rem;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    overflow: hidden;
+}
+.topParttext::before{
+    content: '';
+    width: 100%;
+    height: 1.08em;
+    position: absolute;
+    left: 0;
+    border-radius: 0 .1em .1em 0;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+.topParttext > span {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    bottom: -1.37rem;
+    padding: 0;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+.separator{
+    position: absolute;
+    top: 3.45em;
+    left: .3em;
+    width: 7.35em;
+    height: .95rem;
+    z-index: 4;
+    transform: translateZ(30px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.separator > .hr{
+    width: 100%;
+    height: 1px;
+    background-color: rgba(0,0,0,.3);
+}
+.separator > .circle{
+    position: absolute;
+    height: .5em;
+    width: .5em;
+    border-radius: 100%;
+    background-color: hsl(234, 17%, 12%);
+    z-index: 5;
+}
+.leftCircle{
+    left: -.2em;
+}   
+.rightCircle{
+    left: 7.05rem;
+}
+.topPartFiller{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    border-radius: .1em;
+}
+.backTopPart{
+    position: relative;
+    width: 100%;
+    height: 50%;
+    color: hsl(345, 95%, 68%);
+    font-family: 'Red Hat Text', sans-serif;
+    font-size: 3.5em;
+    font-weight: 700;
+    background-color:#343650;/** #343650 **/
+    margin-top: -3.2em;
+    overflow: hidden;
+    transform: rotateX(180deg);
+}
+.backTopPart > span {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    top: -.67em;
+    left: 0;
+}
+.bottomPartTimer{
+    position: absolute;
+    top: 1.1em;
+    z-index: -1;
+    background-color: hsl(236, 21%, 26%);
+    color: hsl(345, 95%, 68%);
+    font-family: 'Red Hat Text', sans-serif;
+    font-size: 3.5em;
+    font-weight: 700;
+    height: 1.1em;
+    width: 8rem;
+    overflow: hidden;
+    border-radius: .1em;
+    box-shadow: 0 .15em 0 hsl(234, 17%, 12%);
+}
+.bottomPartTimer > span {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: -.71em;
+    padding: 0;
+}
+.timeIn{
+    padding: 1em 0 1em 0;
+    color: hsl(237, 18%, 59%);
+    font-family: 'Red Hat Text', sans-serif;
+    font-size: .7em;
+    letter-spacing:.3em;
+    font-weight: 700;
+    position: absolute;
+    text-align: center;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+@keyframes flipSeconds{
+    0%{
+        transform: rotateX(0deg);
+    }
+    50%{
+        transform: rotateX(0deg);
+    }
+    100%{
+        transform: rotateX(-180deg);
+    }
+}
+@keyframes flipMinutes{
+    0%{
+        transform: rotateX(0deg);
+    }
+    98%{
+        transform: rotateX(0deg);
+    }
+    100%{
+        transform: rotateX(-180deg);
+    }
+}
+@keyframes flipHours{
+    0%{
+        transform: rotateX(0deg);
+    }
+    98%{
+        transform: rotateX(0deg);
+    }
+    99.95%{
+        transform: rotateX(-180deg);
+    }
+}
+@keyframes flipDays{
+    0%{
+        transform: rotateX(0deg);
+    }
+    98%{
+        transform: rotateX(0deg);
+    }
+    99.999%{
+        transform: rotateX(-180deg);
+    }
+}

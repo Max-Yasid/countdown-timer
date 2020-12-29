@@ -1,0 +1,11 @@
+.iconsSectionContainer{
+    width: 100%;
+    text-align: center;
+    height: 40vh;
+}
+.icon{
+    margin: 11em 1.3vw auto 1.3vw;
+}
+.icon:hover path{
+    fill: hsl(345, 95%, 68%);
+}
